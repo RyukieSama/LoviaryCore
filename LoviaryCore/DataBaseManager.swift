@@ -65,14 +65,12 @@ public struct DatabaseManager {
     /// - Parameter database: DataBase
     /// - Throws: Error
     private func createTables(for database: Database) throws {
-//        try database.create(table: TableAccount.name, of: TableAccount.self)
-//        try database.create(table: TableSubject.name, of: TableSubject.self)
-//        try database.create(table: TableTransaction.name, of: TableTransaction.self)
-//        try database.create(table: TableTransactionSubject.name, of: TableTransactionSubject.self)
-//        try database.create(table: TableTransactionTag.name, of: TableTransactionTag.self)
-//        try database.create(table: TableLocation.name, of: TableLocation.self)
-//        try database.create(table: TableBudget.name, of: TableBudget.self)
-//        try database.create(table: TableRecommend.name, of: TableRecommend.self)
+        try database.create(table: TableCard.name, of: TableCard.self)
+        try database.create(table: TableLocation.name, of: TableLocation.self)
+        try database.create(table: TableLover.name, of: TableLover.self)
+        try database.create(table: TablePose.name, of: TablePose.self)
+        try database.create(table: TableProps.name, of: TableProps.self)
+        try database.create(table: TableRecord.name, of: TableRecord.self)
     }
 }
 

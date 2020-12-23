@@ -22,9 +22,6 @@ public class TableCard: MessiTable {
     /// 主键
     public var identifier: Int64? = nil
     
-    /// 持续时间
-    public var duration: Int64? = nil
-    
     /// 创建时间(毫秒)
     public var createdTime: Date? = nil
     
@@ -63,7 +60,6 @@ public class TableCard: MessiTable {
         public static let objectRelationalMapping = TableBinding(CodingKeys.self)
         
         case identifier = "FID"
-        case duration
         case createdTime
         case modifiedTime
         case cardId
@@ -79,7 +75,6 @@ public class TableCard: MessiTable {
         public static var columnConstraintBindings: [CodingKeys: ColumnConstraintBinding]? {
             return [
                 identifier: ColumnConstraintBinding(isPrimary: true, isAutoIncrement: true),
-                duration: ColumnConstraintBinding(isNotNull: false, defaultTo: 0),
                 createdTime: ColumnConstraintBinding(isNotNull: false),
                 modifiedTime: ColumnConstraintBinding(isNotNull: false),
                 cardId: ColumnConstraintBinding(isNotNull: false),
