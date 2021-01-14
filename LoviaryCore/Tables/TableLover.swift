@@ -18,21 +18,24 @@ public class TableLover: MessiTable {
         return identifier
     }
 
+    public init(name: String, gender: Int64) {
+        self.name = name
+        self.gender = gender
+        self.createdTime = Date()
+    }
+    
     /// 主键
     public var identifier: Int64? = nil
     
     /// 名字
     public var name: String? = nil
     
-    /// 性别：0其他 1男 2女 3双 4男to女 5女to男
+    /// 头像Base64
+    public var avatar: String? = nil
+    
+    /// 性别：1男 2女 3其他
     public var gender: Int64? = nil
-    
-    /// 偏好：性别s
-    public var genderLike: String? = nil
-    
-    /// 定位
-    public var locationId: Int64? = nil
-    
+
     /// 备注
     public var memo: String? = nil
     
@@ -51,9 +54,8 @@ public class TableLover: MessiTable {
         
         case identifier = "FID"
         case name
+        case avatar
         case gender
-        case genderLike
-        case locationId
         case memo
         case createdTime
         case modifiedTime
@@ -63,9 +65,8 @@ public class TableLover: MessiTable {
             return [
                 identifier: ColumnConstraintBinding(isPrimary: true, isAutoIncrement: true),
                 name: ColumnConstraintBinding(isNotNull: false),
+                avatar: ColumnConstraintBinding(isNotNull: false),
                 gender: ColumnConstraintBinding(isNotNull: false),
-                genderLike: ColumnConstraintBinding(isNotNull: false),
-                locationId: ColumnConstraintBinding(isNotNull: false),
                 memo: ColumnConstraintBinding(isNotNull: false),
                 createdTime: ColumnConstraintBinding(isNotNull: false),
                 modifiedTime: ColumnConstraintBinding(isNotNull: false),

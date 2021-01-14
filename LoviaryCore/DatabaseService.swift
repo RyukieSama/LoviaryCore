@@ -34,7 +34,7 @@ public enum DatabaseService: DatabaseTargetType, DatabaseServiceable {
     }
     
     var groupURL: URL? {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ryukie.sama.loviary")
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Ryukie.Sama.Loviary")
     }
     
     public var baseURL: URL {
